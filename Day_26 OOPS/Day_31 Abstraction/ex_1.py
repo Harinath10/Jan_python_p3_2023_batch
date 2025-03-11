@@ -2,7 +2,7 @@ from abc import ABC,abstractmethod
 class Ipl(ABC):
     @abstractmethod
     def team_acd(self):
-        print("hello")
+        print("Hai,this is Abstract method")
         pass
 class Year(Ipl):
     def team_acd(self):
