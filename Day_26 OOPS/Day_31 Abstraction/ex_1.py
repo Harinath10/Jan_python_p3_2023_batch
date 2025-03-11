@@ -2,7 +2,8 @@ from abc import ABC,abstractmethod
 class Ipl(ABC):
     @abstractmethod
     def team_acd(self):
-        print("hello")
+        # print("hello")
+        print("Hai")
         pass
 class Year(Ipl):
     def team_acd(self):
