@@ -1,0 +1,17 @@
+jump Statements
+====================
+
+Break
+----------
+With the break statement we can stop the loop even if the while condition is true
+
+continue
+------------
+With the continue statement we can stop the current iteration, and continue with the next
+
+pass
+-------
+==> function definition has or if  statemnets can't be  empty , if you some reason have a function or if or for   with no conetent ,
+        put the pass statements to avoid getting an error.
+
+==>  The pass statement is a null statement. But the difference between pass and comment is that comment is ignored by the  interpreter whereas pass is not ignored..

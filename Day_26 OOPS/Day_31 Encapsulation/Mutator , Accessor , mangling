@@ -1,0 +1,17 @@
+Mutator
+---------------
+==>  mutator is nothing but setters
+==> passing the value (or) Variable
+->  ex:  setname()
+
+Accessor
+---------------
+ ==> Accessor is nothing but Getters
+ ==> return the value (or) Variable
+ -> ex:  getname()
+
+
+Mangling
+--------------
+
+Mangling is used for class Attributes, that one doesn't want subclass to use.

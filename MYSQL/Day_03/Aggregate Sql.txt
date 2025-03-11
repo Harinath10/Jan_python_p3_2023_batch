@@ -1,0 +1,32 @@
+SQL Aggregate Functions
+-----------------------------------
+
+1) count()
+2) sum()
+3) avg()
+4) min()
+5) max()
+
+1)
+--------------------------------------------------
+select count(coulumnname) from tablename;
+select count(*) from tablename;
+select count(*) from tablename where age>=20;
+
+2)
+--------------------------------------------------
+
+select sum(coulumn name ) from tablename;                       coulumn should be Numeric
+select sum(coulumn name ) from tablename where age>=20 ;
+
+3)
+--------------------------------------------------
+select avg(age)  from table_name;
+
+4)
+--------------------------------------------------
+select min(age) from table_name;
+
+5)
+--------------------------------------------------
+select max(age) from table_name;

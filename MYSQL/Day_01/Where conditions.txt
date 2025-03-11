@@ -1,0 +1,178 @@
+where conditions
+--------------------
+
+mysql> connect jan_2023;
+Connection id:    20
+Current database: jan_2023
+
+mysql> show tables;
++--------------------+
+| Tables_in_jan_2023 |
++--------------------+
+| emp                |
+| stu                |
++--------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw100 | sirisha | Mpl      |   21 | F      |
+| mw222 | Kalpana | baglr    |   22 | F      |
+| mw333 | Ajith   | baglr    |   22 | M      |
+| mw444 | Madhavi | HYd      |   22 | F      |
+| mw555 | Dinesh  | chnai    |   20 | M      |
+| mw666 | Hari K  | chnai    |   23 | M      |
+| mw777 | Maha    | pune     |   20 | M      |
+| mw888 | Suhail  | Hyd      |   23 | M      |
+| mw999 | Manohar | hyd      |   26 | M      |
+| ms111 | Ajith   | baglr    |   22 | M      |
+| ms444 | Madhavi | HYd      |   22 | F      |
+| ms555 | Dinesh  | chnai    |   20 | M      |
+| ms666 | Hari K  | chnai    |   23 | M      |
+| ms777 | Maha    | pune     |   20 | M      |
+| ms888 | Suhail  | Hyd      |   23 | M      |
+| ms999 | Manohar | hyd      |   26 | M      |
+| 12345 | xyz     | goa      |   54 | F      |
+| 101   | NULL    | NULL     |   12 | M      |
++-------+---------+----------+------+--------+
+18 rows in set (0.02 sec)
+
+
+mysql> select * from emp where gender = "F";
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw100 | sirisha | Mpl      |   21 | F      |
+| mw222 | Kalpana | baglr    |   22 | F      |
+| mw444 | Madhavi | HYd      |   22 | F      |
+| ms444 | Madhavi | HYd      |   22 | F      |
+| 12345 | xyz     | goa      |   54 | F      |
++-------+---------+----------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from emp where gender = "M";
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw333 | Ajith   | baglr    |   22 | M      |
+| mw555 | Dinesh  | chnai    |   20 | M      |
+| mw666 | Hari K  | chnai    |   23 | M      |
+| mw777 | Maha    | pune     |   20 | M      |
+| mw888 | Suhail  | Hyd      |   23 | M      |
+| mw999 | Manohar | hyd      |   26 | M      |
+| ms111 | Ajith   | baglr    |   22 | M      |
+| ms555 | Dinesh  | chnai    |   20 | M      |
+| ms666 | Hari K  | chnai    |   23 | M      |
+| ms777 | Maha    | pune     |   20 | M      |
+| ms888 | Suhail  | Hyd      |   23 | M      |
+| ms999 | Manohar | hyd      |   26 | M      |
+| 101   | NULL    | NULL     |   12 | M      |
++-------+---------+----------+------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select * from emp where location ="HYD";
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw444 | Madhavi | HYd      |   22 | F      |
+| mw888 | Suhail  | Hyd      |   23 | M      |
+| mw999 | Manohar | hyd      |   26 | M      |
+| ms444 | Madhavi | HYd      |   22 | F      |
+| ms888 | Suhail  | Hyd      |   23 | M      |
+| ms999 | Manohar | hyd      |   26 | M      |
++-------+---------+----------+------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select * from emp where age >26;
++-------+------+----------+------+--------+
+| id    | name | location | age  | gender |
++-------+------+----------+------+--------+
+| 12345 | xyz  | goa      |   54 | F      |
++-------+------+----------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp where age >20;
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw100 | sirisha | Mpl      |   21 | F      |
+| mw222 | Kalpana | baglr    |   22 | F      |
+| mw333 | Ajith   | baglr    |   22 | M      |
+| mw444 | Madhavi | HYd      |   22 | F      |
+| mw666 | Hari K  | chnai    |   23 | M      |
+| mw888 | Suhail  | Hyd      |   23 | M      |
+| mw999 | Manohar | hyd      |   26 | M      |
+| ms111 | Ajith   | baglr    |   22 | M      |
+| ms444 | Madhavi | HYd      |   22 | F      |
+| ms666 | Hari K  | chnai    |   23 | M      |
+| ms888 | Suhail  | Hyd      |   23 | M      |
+| ms999 | Manohar | hyd      |   26 | M      |
+| 12345 | xyz     | goa      |   54 | F      |
++-------+---------+----------+------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select * from emp where age >=20;
++-------+---------+----------+------+--------+
+| id    | name    | location | age  | gender |
++-------+---------+----------+------+--------+
+| mw100 | sirisha | Mpl      |   21 | F      |
+| mw222 | Kalpana | baglr    |   22 | F      |
+| mw333 | Ajith   | baglr    |   22 | M      |
+| mw444 | Madhavi | HYd      |   22 | F      |
+| mw555 | Dinesh  | chnai    |   20 | M      |
+| mw666 | Hari K  | chnai    |   23 | M      |
+| mw777 | Maha    | pune     |   20 | M      |
+| mw888 | Suhail  | Hyd      |   23 | M      |
+| mw999 | Manohar | hyd      |   26 | M      |
+| ms111 | Ajith   | baglr    |   22 | M      |
+| ms444 | Madhavi | HYd      |   22 | F      |
+| ms555 | Dinesh  | chnai    |   20 | M      |
+| ms666 | Hari K  | chnai    |   23 | M      |
+| ms777 | Maha    | pune     |   20 | M      |
+| ms888 | Suhail  | Hyd      |   23 | M      |
+| ms999 | Manohar | hyd      |   26 | M      |
+| 12345 | xyz     | goa      |   54 | F      |
++-------+---------+----------+------+--------+
+17 rows in set (0.00 sec)
+
+mysql> select * from emp where age <=20;
++-------+--------+----------+------+--------+
+| id    | name   | location | age  | gender |
++-------+--------+----------+------+--------+
+| mw555 | Dinesh | chnai    |   20 | M      |
+| mw777 | Maha   | pune     |   20 | M      |
+| ms555 | Dinesh | chnai    |   20 | M      |
+| ms777 | Maha   | pune     |   20 | M      |
+| 101   | NULL   | NULL     |   12 | M      |
++-------+--------+----------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from emp where age >20; SET SQL_SAFE_UPDATES=0;  --> for unsafe update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

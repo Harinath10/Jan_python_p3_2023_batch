@@ -1,0 +1,30 @@
+List
+------
+
+--> List is a Collection of data
+--> list is allows sqaure Brackets []
+--> list allows Indexing
+--> list Allows Slicing
+--> list allows duplicate values
+--> list is Homogenious and Hetrogenious
+--> List is Mutable == Changable (Modifiable)
+--> Data is Insecure
+
+    i) append()  --> it can add the one element at end of the list
+
+   ii) pop()   --> it can remove the one  element at end of the list // and also if we give index pos
+                                                 inside the pop , index position also remove
+
+  iii) insert(indexposition, value)  --> store the value exact indexposition
+
+   iv) extend([])   --> add the multiple values end of the list
+
+    v) update the value   --> it can update Exact index Position (before value Updates)
+
+   vi) del --> del variabl_name[index_pos] --> it can remove index postion value
+
+  Vii) Remove()  --> variable_name.remove(value) --> it can remove the VAlue inside the data
+  len()
+  count()
+  index()
+

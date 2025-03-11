@@ -1,0 +1,59 @@
+table Name : Student
+
+
+SET SQL_SAFE_UPDATES=0;  --> for unsafe update
+SET SQL_SAFE_UPDATES=1;  --> for safe update
+
+updating a row in Student table using set
+---------------------------------------
+
+update student set name = "Ashok" where id = 100;
+
+deleting a row in Student table 
+----------------------------------
+delete from student where id = 101;
+
+
+fileter the records using Where 
+---------------------------------------
+
+select * from student Where gender = "M";
+select * from student Where gender = "F";
+select name from student Where gender = "M";
+
+select * from student Where id >= 150;
+select * from student Where id < 150;
+
+slect * from student where name LIKE "%s";
+slect * from student where name LIKE "s%";
+
+select * from student where location IN ("HYD","banglr");
+select * from student where name  IN ("Khadar","prakash","Sai");
+
+
+select name,gender from student where id between 100 and 200;
+
+
+select name,gender,id from student where location ="chennai" and id = 101;
+
+
+select name,gender,id from student where location ="chennai" or id = 101;
+
+select *from student where location ="chennai" and id name IN("Dharani", "vanaja","Kavya");
+
+select *from student where location ="chennai" and id name NOT IN("Roshini", "Aksitha","Naveen");
+
+
+select name,gender,id from student where NOT location ="chennai";
+
+select name,gender,id from student where NOT location ="chennai" and id = 101;
+
+
+
+select *from student where location ="chennai" and (id =101 or id = 102 or gender = "F");
+
+
+
+
+
+

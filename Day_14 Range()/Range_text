@@ -1,0 +1,8 @@
+Range
+--------------
+=> range starts is 0 and ending is 9
+=> range contains same as Slice . It conatains start Value endvale and step
+=>  range() function returns sequence of Numbers
+=> Default starting value is 0
+=> incremnet by 1 (by deafult)
+=> end value is end -1

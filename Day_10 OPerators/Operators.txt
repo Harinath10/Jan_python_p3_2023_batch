@@ -1,0 +1,111 @@
+Operators
+=============
+Operators are used to perform operations on variables and values.
+
+                                                                                                                                                                             Y+Y=12
+                                                                                                                                                                          X and Y are the operands
+                                                                                                                                                                          + and = are operators
+                                                                                                                                                                           X+Y=12 are the opertaion
+1) arthemetic operators
+----------------------------
+arthemetic operators are the operators to perform the mathematical Operations
+                                                    
+                                                                            ^   dividend
+                                                                            ||
+                                                            deviser       3)11(3.66  --> quotient
+                                                                             9
+                                                                           ------
+                                                                             20              remainder
+                                                                             18
+                                                                         ---------
+                                                                             2
+x=3
+y=2
+
+d=7
+s=2
+
++      addition           x+y=5
+-      substraction       x-y=1
+*      Multiplication     x*y=6
+/      Division           x/y= 1.5      Quotient VAlue
+%      Modulue            d%s= 1        # GET THE  remainder Value
+**     Exponential        x**y=9          3 power 2  = 3* 3 ==> 9
+                          y**x= 8         2 power 3  = 2*2*2 ==> 8
+//     Floor Division     x//y =1
+
+
+
+
+2) Assainment Operators
+------------------------------
+Assainment operators are the operators used to assain a new value to a Variable
+a=5
+=	  equals to                     a=5
++=	 addition and assainment        a+=1  ==> a=a+1  ==> a=5+1  ==> a=6
+-=	 subtraction and assainment     a-=1  ==> a=a-1  ==> a=5-1  ==> a=4
+*=	  multiplication and assainment a*=1  ==> a=a*1  ==> a=5*1  ==> a=5
+/=	  Division and assainment       a/=1  ==> a=a/1  ==> a=5/1  ==> a=5
+%=	  Modulue  and assainment       a%=1  ==> a=a%1  ==> a=5%1  ==> a=0
+//=	 floor division and assainment  a//=1  ==> a=a//1  ==> a=5//1  ==> a=5
+**=  Exponential and assainment     a**=1  ==> a=a**1  ==> a=5**1  ==> a=5
+
+
+3) Comparision Operator
+---------------------------------
+Comparision Operators are used to Compare Two values
+
+==   double equals to
+<    Lessthan
+>    GraterThan
+<=   Lessthan or equalsto
+>=   graterThan or equalsto
+!=   not equals to
+
+
+4) Logical Operators
+              :  Logical operators are used to combine conditional statements
+----------------------------
+
+login     AND    ==> and  ==> both conditions must be True
+Logical   OR     ==> or   ==> any one of the condition is True  result also True  ( both conditions True == > True )
+logical   NOT    ==> not    ==> Vise versa
+
+   TRUTH table
+   ----------------
+   p           q           p and q         p or q
+
+   T            T               T             T
+   T            F               F             T
+   F            T               F             T
+   F            F               F             F
+
+
+   Not
+   _____
+
+   p       P not
+
+   T        F
+   F        T
+
+
+
+
+5) Identity Operators
+--------------------------
+identity operators are used to compare values and  objects and with memory locations
+
+is             ==>   returns True  X is Y  if both variables are the same Memory Location or objects 
+ 
+is not     ==>   returns True  X is Y  if both variables are not   same Memory Location or objects 
+
+
+6) Membership Operators
+--------------------------------
+ 
+Membership Operators are used to test , if a Sequence is presented in an Object
+
+
+in            ==> 	Returns True if a sequence with the specified value is present in the object
+not in	      ==>   Returns True if a sequence with the specified value is not present in the object

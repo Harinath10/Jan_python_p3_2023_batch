@@ -1,0 +1,24 @@
+Looping statements
+----------------------------
+-->    if we want to execute a group of statements multiple times  then we should go for Itaerative Statements
+
+
+While
+----------
+
+-->    if we want to execute a group of statements iteratively until some condition is False.
+  
+-->    The while used for number of iterations are Not Exactly Known
+
+-->    It is an Infinity Loop
+
+
+
+For
+----------
+
+-->  if we want to execute some Action , for every element present in the same Sequence (it may be string  or collection )
+        we  should go for "for loop".
+
+
+-->  number of iterarion are exactly known.
