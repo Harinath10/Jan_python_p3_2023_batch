@@ -1,0 +1,33 @@
+alter Queries
+=======================
+
+
+alter table infosys add contact int;
+
+alter table infosys modify contact long;
+
+alter table infosys drop column contact;
+
+alter table infosys rename column contact to pincode;
+
+truncate table infosys;
+
+drop table infosys;
+
+reg exp
+===============================
+
+select * from b_company where name regexp "a";
+
+select * from b_company where name regexp "[ih]";
+
+select * from b_company where name regexp "[ihmn]at";
+
+select * from b_company where emp_location regexp "Hyd|r$|^g";
+
+select * from ahinfotech where name regexp "^[abcde]";
+
+--------------------------------------------------------
+
+rename table b_company to ahinfotech;
+update infosys set contact = 79856 where address = "chennai";

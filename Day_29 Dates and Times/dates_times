@@ -1,0 +1,39 @@
+              Dates and Time
+--------------------------------------------
+python date is a module we can import name as datetime to work with date and Objects
+==> The date conatain year,month,day,hour,min,sec and Microseconds
+==> the date time module has many methods to return information about the date object
+
+
+creating date Object
+-----------------------
+
+--> to create a date, we can use the datetime() class of the datetime Module
+--> the datetime()  requires three parameters to create a date: year , Month, day
+
+import datetime
+
+x = datetime.datetime(2022,10,21)
+print(x)
+
+
+
+           strftime                   --> String from time
+---------------------------------
+
+--> the datetime object has a method for formatting date objects into readable strings
+--> the method is called strftime(), and take one parameter ,
+format to specify the format of the String
+
+import datetime
+
+x = datetime.datetime(2022,10,21)
+print(x.strftime("%A")   ==> friday
+print(x.strftime("%B")   ==> OCTOBER
+
+
+
+            TIME
+-----------------------------
+
+--> time module provides various time realted functions

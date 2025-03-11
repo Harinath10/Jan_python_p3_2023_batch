@@ -1,0 +1,684 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| ant                  |
+| college              |
+| diff_company_details |
+| information_schema   |
+| institute            |
+| jan_2023             |
+| mysql                |
+| myworld              |
+| performance_schema   |
+| python_p2            |
+| sakila               |
+| sys                  |
+| world                |
+| xyz                  |
++----------------------+
+14 rows in set (0.00 sec)
+
+mysql> connect college;
+Connection id:    22
+Current database: college
+
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| btcollege         |
+| mits              |
+| sgdc              |
+| ssdc              |
++-------------------+
+4 rows in set (0.01 sec)
+
+mysql> select * from btcollege;
++---------------+------+--------+-------------+
+| students_name | id   | rollno | phonenumber |
++---------------+------+--------+-------------+
+| Riyaz         |  101 |      1 |  9876543210 |
+| Zahid         |  102 |      2 |  9876553210 |
+| Tharun        |  103 |      3 |  9986553210 |
+| Pavan         |  104 |      4 |  9988553210 |
+| Karthik       |  105 |      5 |  9553222210 |
+| lakshmi       |  106 |      6 |  9989887610 |
+| lokesh        |  107 |      7 |  8989887610 |
+| lokesh        | NULL |      7 |  8989887610 |
++---------------+------+--------+-------------+
+8 rows in set (0.00 sec)
+
+mysql> alter table btcollege branch varchar(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'branch varchar(10)' at line 1
+mysql> alter table btcollege add branch varchar(10);
+Query OK, 0 rows affected (0.21 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from btcollege;
++---------------+------+--------+-------------+--------+
+| students_name | id   | rollno | phonenumber | branch |
++---------------+------+--------+-------------+--------+
+| Riyaz         |  101 |      1 |  9876543210 | NULL   |
+| Zahid         |  102 |      2 |  9876553210 | NULL   |
+| Tharun        |  103 |      3 |  9986553210 | NULL   |
+| Pavan         |  104 |      4 |  9988553210 | NULL   |
+| Karthik       |  105 |      5 |  9553222210 | NULL   |
+| lakshmi       |  106 |      6 |  9989887610 | NULL   |
+| lokesh        |  107 |      7 |  8989887610 | NULL   |
+| lokesh        | NULL |      7 |  8989887610 | NULL   |
++---------------+------+--------+-------------+--------+
+8 rows in set (0.00 sec)
+
+mysql> desc btcollege;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| students_name | varchar(10) | YES  |     | NULL    |       |
+| id            | int         | YES  |     | NULL    |       |
+| rollno        | int         | YES  |     | NULL    |       |
+| phonenumber   | double      | YES  |     | NULL    |       |
+| branch        | varchar(10) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table btcollege modify branch varchar(13);
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc btcollege;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| students_name | varchar(10) | YES  |     | NULL    |       |
+| id            | int         | YES  |     | NULL    |       |
+| rollno        | int         | YES  |     | NULL    |       |
+| phonenumber   | double      | YES  |     | NULL    |       |
+| branch        | varchar(13) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table btcollege add pincode int;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from btcollege;
++---------------+------+--------+-------------+--------+---------+
+| students_name | id   | rollno | phonenumber | branch | pincode |
++---------------+------+--------+-------------+--------+---------+
+| Riyaz         |  101 |      1 |  9876543210 | NULL   |    NULL |
+| Zahid         |  102 |      2 |  9876553210 | NULL   |    NULL |
+| Tharun        |  103 |      3 |  9986553210 | NULL   |    NULL |
+| Pavan         |  104 |      4 |  9988553210 | NULL   |    NULL |
+| Karthik       |  105 |      5 |  9553222210 | NULL   |    NULL |
+| lakshmi       |  106 |      6 |  9989887610 | NULL   |    NULL |
+| lokesh        |  107 |      7 |  8989887610 | NULL   |    NULL |
+| lokesh        | NULL |      7 |  8989887610 | NULL   |    NULL |
++---------------+------+--------+-------------+--------+---------+
+8 rows in set (0.00 sec)
+
+mysql> alter table btcollege rename branch to coursetype;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to coursetype' at line 1
+mysql> alter table btcollege rename column branch to coursetype;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from btcollege;
++---------------+------+--------+-------------+------------+---------+
+| students_name | id   | rollno | phonenumber | coursetype | pincode |
++---------------+------+--------+-------------+------------+---------+
+| Riyaz         |  101 |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |  102 |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |  103 |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |  104 |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |  105 |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |  106 |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |  107 |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        | NULL |      7 |  8989887610 | NULL       |    NULL |
++---------------+------+--------+-------------+------------+---------+
+8 rows in set (0.00 sec)
+
+mysql> alter table btcollege rename column id to sno;
+Query OK, 0 rows affected (0.19 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from btcollege;
++---------------+------+--------+-------------+------------+---------+
+| students_name | sno  | rollno | phonenumber | coursetype | pincode |
++---------------+------+--------+-------------+------------+---------+
+| Riyaz         |  101 |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |  102 |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |  103 |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |  104 |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |  105 |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |  106 |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |  107 |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        | NULL |      7 |  8989887610 | NULL       |    NULL |
++---------------+------+--------+-------------+------------+---------+
+8 rows in set (0.00 sec)
+
+mysql> alter table btcollege drop sno;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from btcollege;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+8 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> select * from btcollege where name regexp "a";
+ERROR 1054 (42S22): Unknown column 'name' in 'where clause'
+mysql> select * from btcollege where students_name regexp "a";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+6 rows in set (0.17 sec)
+
+mysql> select * from btcollege where students_name regexp "i";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+4 rows in set (0.06 sec)
+
+mysql> select * from btcollege where students_name regexp "ik";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "hi";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "i$";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^i";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^a";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "a&";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "a$";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^z";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "z$";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^z$";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^k$";
+Empty set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "^karthik$";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "hik";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "hik$";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "[hi]";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+7 rows in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "[arn]";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "[rn]";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> insert into btcollege(students_name,rollno,phonenumber) values ("kalyani",11,32782738728);
+Query OK, 1 row affected (0.30 sec)
+
+mysql> select * from btcollege;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "[rn]i";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from btcollege where students_name regexp "a[rn]";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select * from btcollege where phonenumber regexp "9986553210|2210$|^955";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from btcollege where phonenumber regexp "9986553210|2210$|^100";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> rename table btcollege to Bharathi;
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| bharathi          |
+| mits              |
+| sgdc              |
+| ssdc              |
++-------------------+
+4 rows in set (0.01 sec)
+
+mysql> select * from bharathi;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> update bharathi set coursetype = "BSC" where rollno = 4;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from bharathi;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select students_name from bharathi;
++---------------+
+| students_name |
++---------------+
+| Riyaz         |
+| Zahid         |
+| Tharun        |
+| Pavan         |
+| Karthik       |
+| lakshmi       |
+| lokesh        |
+| lokesh        |
+| kalyani       |
++---------------+
+9 rows in set (0.00 sec)
+
+mysql> select students_name as sn from bharathi;
++---------+
+| sn      |
++---------+
+| Riyaz   |
+| Zahid   |
+| Tharun  |
+| Pavan   |
+| Karthik |
+| lakshmi |
+| lokesh  |
+| lokesh  |
+| kalyani |
++---------+
+9 rows in set (0.00 sec)
+
+mysql> select * from bharathi;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select min(rollno) from bharathi;
++-------------+
+| min(rollno) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.38 sec)
+
+mysql> select min(rollno),students_name as sn from bharathi;
++-------------+-------+
+| min(rollno) | sn    |
++-------------+-------+
+|           1 | Riyaz |
++-------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select max(rollno),students_name as sn from bharathi;
++-------------+-------+
+| max(rollno) | sn    |
++-------------+-------+
+|          11 | Riyaz |
++-------------+-------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> select * from bharathi where rollno limit 5;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from bharathi where rollno limit 0,5;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from bharathi where rollno limit 2,5;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from bharathi where rollno limit 2,2;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bharathi where rollno limit 7,2;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from bharathi order by students_name asc;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.06 sec)
+
+mysql> select * from bharathi order by students_name desc;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql>
+mysql> desc mits;select * from  bharathi where students_name="lokesh" limit 1;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| students_name | varchar(10) | YES  |     | NULL    |       |
+| id            | int         | YES  |     | NULL    |       |
+| rollno        | int         | YES  |     | NULL    |       |
+| phonenumber   | double      | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+Empty set (0.00 sec)
+
+mysql> select * from  bharathi where students_name="lokesh" limit 1;
+Empty set (0.00 sec)
+
+mysql> select * from bharathi;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| Riyaz         |      1 |  9876543210 | NULL       |    NULL |
+| Zahid         |      2 |  9876553210 | NULL       |    NULL |
+| Tharun        |      3 |  9986553210 | NULL       |    NULL |
+| Pavan         |      4 |  9988553210 | BSC        |    NULL |
+| Karthik       |      5 |  9553222210 | NULL       |    NULL |
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| kalyani       |     11 | 32782738728 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select * from  bharathi where students_name="lokesh" limit 1;
+Empty set (0.00 sec)
+
+mysql> select * from  bharathi where students_name="lokesh";
+Empty set (0.00 sec)
+
+mysql> select * from  bharathi where students_name="lokesh";
+Empty set (0.00 sec)
+
+mysql> select * from  bharathi where students_name="lakshmi";
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| lakshmi       |      6 |  9989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from  bharathi where rollno=7;
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> desc mits;select * from  bharathi where rollno =7  limit 1;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| students_name | varchar(10) | YES  |     | NULL    |       |
+| id            | int         | YES  |     | NULL    |       |
+| rollno        | int         | YES  |     | NULL    |       |
+| phonenumber   | double      | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
++---------------+--------+-------------+------------+---------+
+| students_name | rollno | phonenumber | coursetype | pincode |
++---------------+--------+-------------+------------+---------+
+| lokesh        |      7 |  8989887610 | NULL       |    NULL |
++---------------+--------+-------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql>

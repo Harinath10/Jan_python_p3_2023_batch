@@ -1,0 +1,17 @@
+Control Statements
+======================
+
+control Statements are the statements to control the flow of the Programme
+
+conditional or selective Statements
+================================
+
+a Conditional Statemment will select the Block of Statements that will be execute base of some Conditions
+
+if          -->   if statement is the most simple decision-making statement. It is used to decide whether a certain statement or block of                              statements will be executed or not 
+
+elif      -->   The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".
+
+else    -->  The else keyword catches anything which isn't caught by the previous conditions.
+
+

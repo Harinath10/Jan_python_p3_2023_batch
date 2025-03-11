@@ -1,0 +1,80 @@
+Inheritance
+-----------------
+Inheritance is the process by which genetic information is passed on from parent to child.
+
+
+Single level Inheriatnce
+Multi level Inheriatnce
+Multiple Inheriatnce
+Hirarchial Inheritance
+Hubrid Iheritance
+
+
+super class ==> ParentClass ==> Base Class
+sub class ==> Child class ==> Derived class
+
+Parent class is the class being inherited from, also called base class.
+Child class is the class that inherits from another class, also called derived class.
+
+Single level Inheriatnce
+-----------------------------
+In Single level Inheritance the propertise are Extending from Single parent class to single Child Class
+
+One super class related to One Derived Class
+
+parent
+  |
+ Child
+
+Multi level Inheriatnce
+--------------------------
+class Grand parent is a Super class , it is  derived from one Sub class parent
+Again Super Parent class is derived from one Sub class Child.
+
+class A
+  class B(A)
+     class C(B)
+        class D(C)
+           class E(D)
+
+Multiple Inheritance
+--------------------
+When ever Your Workingwith Multiple iNheritance , n theChild class , we can apply above parent class propertise
+
+In the hild class ,we can applying parent class propertise
+
+
+Class A     Class B     class C
+
+     Class D(A, B, C)
+
+
+Hirarchial inheritance
+-------------------------
+Getting propertise from one  parent class to many child classes is possible whenever your working with Hirarchial INheritance
+
+                     Class A
+
+class B(A)        class C(A)      class D(A)   class E(A)
+
+
+
+Hybrid Inheritance
+------------------------
+this is a Combination of Multilevel and Hyrarchial INheritance
+
+class A
+  class B(A)
+     class C(B)
+        class D(C)
+           class E(D)
+
+
+ and
+
+
+                      Class A
+
+class B(A)        class C(A)      class D(A)   class E(A)
+
+

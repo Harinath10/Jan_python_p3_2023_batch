@@ -1,0 +1,17 @@
+Set
+-----------------
+
+-->   set is denoted as {} --> flower brackets
+-->   set is a Collection of data
+-->   set is Un_ordered
+-->   set dont allow Duplicates
+-->   set deosn't index  and Slicing
+-->   set is Homogenious and Hetrogenious
+-->   set is Mutable
+
+      ==> add()     --> we can add only 1 value
+      ==> update([])  --> we can add one or More  (multiple) values
+      ==> remove()    --> it can remove the Value   ( Error)
+      ==> discard()    --> it can remove the Value   ( No Error)
+
+--> len()
