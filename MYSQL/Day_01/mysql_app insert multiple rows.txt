@@ -1,7 +1,0 @@
-SELECT * FROM college.btcollege;
--- insert into btcollege(students_name,id,rollno,phonenumber)values("Pavan",104,4,9988553210);
--- insert into btcollege(students_name,id,rollno,phonenumber)values("Karthik",105,5,9553222210);
--- insert into btcollege(students_name,id,rollno,phonenumber)values("lakshmi",106,6,9989887610);
-insert into btcollege(students_name,id,rollno,phonenumber)values("lokesh ",107,7,8989887610);
-
-insert into btcollege(students_name,rollno,phonenumber)values("lokesh ",7,8989887610);
