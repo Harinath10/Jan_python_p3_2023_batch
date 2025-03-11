@@ -1,0 +1,30 @@
+SQL
+------------------------
+
+Sql stands for Structured Query Language
+Sql lets We access and Manipulate Databases
+
+Sql can Execute Queries against a database
+Sql can retrive data From a Database
+Sql can insert records in a database
+Sql can update ,delete records in a Database
+Sql can Create a new table in a database
+Sql can set permisssions on tables , procedures and Views.
+
+
+
+
+SQl vs MYSQL
+------------------
+
+Sql is a Query Language
+MySql is a relational database that uses Sql  to Query a Database
+
+You can use SQl to access , update and Manipulate the data stored in a Database
+
+However , Mysql is a Database that Stores the Existing data in a databse  in an Organised Manner.
+
+Sql is A Language used for oprating Different Relational databas.
+
+Sql is More Secure than Mysql
+

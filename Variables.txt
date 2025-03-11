@@ -1,0 +1,15 @@
+Variable
+-------------
+  variable has a reserved Memory Locations which can Store Values
+
+Ex:   x = 10           ==> x is a Variable , it is storing 10 value
+      y = 12.78        ==> y is a Variable , it is Storing 12.78 value
+      z = "My World"   ==> z is a variable , it is Storing "My World" 
+     
+Pascal case  --> Each Word starting Leter UpperCase
+                  ex:
+                      MyWorldSoftwareSolutions =12
+                      IntValueIs = 4
+                      FloatValueIs = 34.8
+                      StringDataIs = "Python"
+

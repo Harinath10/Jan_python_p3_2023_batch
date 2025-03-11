@@ -1,0 +1,183 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| ant                  |
+| college              |
+| diff_company_details |
+| information_schema   |
+| institute            |
+| jan_2023             |
+| mysql                |
+| myworld              |
+| performance_schema   |
+| python_p2            |
+| sakila               |
+| sys                  |
+| world                |
+| xyz                  |
++----------------------+
+14 rows in set (0.00 sec)
+
+mysql> connect jan_2023;
+Connection id:    24
+Current database: jan_2023
+
+mysql> show tables;
++--------------------+
+| Tables_in_jan_2023 |
++--------------------+
+| emp                |
+| stu                |
++--------------------+
+2 rows in set (0.01 sec)
+
+mysql> connect diff_company_details;
+Connection id:    25
+Current database: diff_company_details
+
+mysql> show tables;
++--------------------------------+
+| Tables_in_diff_company_details |
++--------------------------------+
+| a_company                      |
+| ahinfotech                     |
+| infotech                       |
++--------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from a_company;
++----------+--------+--------+----------+
+| emp_name | emp_id | gender | location |
++----------+--------+--------+----------+
+| A        |     11 | M      | banglr   |
+| B        |     12 | M      | banglr   |
+| A        |     13 | F      | Hyd      |
+| Aa       |     14 | f      | Chennai  |
+| c        |     17 | F      | Hyd      |
+| C        |     10 | F      | Hyd      |
+| D        |     21 | M      | Pune     |
+| raj      |     22 | M      | banglr   |
+| Saif     |     23 | M      | Hyd      |
+| Sumit    |     35 | M      | Mp       |
+| Reshma   |    101 | F      | Chennai  |
+| Das      |     54 | M      | tpt      |
+| Almn     |   1001 | M      | banglr   |
+| sandip   |     81 | M      | banglr   |
+| sree     |    111 | M      | tpt      |
+| nani     |   1091 | M      | goa      |
+| B        |     12 | M      | banglr   |
+| B        |     12 | M      | banglr   |
+| A        |     13 | F      | Hyd      |
+| Aa       |     14 | f      | Chennai  |
+| c        |     17 | F      | Hyd      |
+| C        |     10 | F      | Hyd      |
+| D        |     21 | M      | Pune     |
+| raj      |     22 | M      | banglr   |
+| Saif     |     23 | M      | Hyd      |
+| Sumit    |     35 | M      | Mp       |
+| Reshma   |    101 | F      | Chennai  |
+| Das      |     54 | M      | tpt      |
+| Almn     |   1001 | M      | banglr   |
+| sandip   |     81 | M      | banglr   |
+| sree     |    111 | M      | tpt      |
+| sandip   |     81 | M      | banglr   |
++----------+--------+--------+----------+
+32 rows in set (0.07 sec)
+
+mysql> select * from ahinfotech;
++---------+------+------------+--------------+-----------+
+| name    | id   | emp_gender | emp_location | address   |
++---------+------+------------+--------------+-----------+
+| Ajay    |  151 | M          | banglr       | Marthalli |
+| Arun    |  150 | M          | Hyd          | NULL      |
+| Balu    |  157 | M          | Chennai      | NULL      |
+| Anji    |  187 | M          | Hyd          | NULL      |
+| Raju    |  200 | M          | Hyd          | NULL      |
+| Dharani |  281 | F          | Pune         | NULL      |
+| Saif    |  293 | M          | Hyd          | NULL      |
+| Sumit   |  305 | M          | Mp           | NULL      |
+| Das     |  548 | M          | tpt          | NULL      |
+| Anil    |  111 | M          | tpt          | NULL      |
+| Chitra  |  121 | M          | goa          | NULL      |
++---------+------+------------+--------------+-----------+
+11 rows in set (0.08 sec)
+
+mysql> select name from ahinfotech where name like "____";
++------+
+| name |
++------+
+| Ajay |
+| Arun |
+| Balu |
+| Anji |
+| Raju |
+| Saif |
+| Anil |
++------+
+7 rows in set (0.00 sec)
+
+mysql> select name from ahinfotech where name like "___";
++------+
+| name |
++------+
+| Das  |
++------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> delete from b_company where name ="Anji"  and  emp_location = "banglr";
+ERROR 1146 (42S02): Table 'diff_company_details.b_company' doesn't exist
+mysql> delete from ahinfotech where name ="Anji"  and  emp_location = "banglr";
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> select distinct(location) from ahinfotech;
+ERROR 1054 (42S22): Unknown column 'location' in 'field list'
+mysql> select distinct(emp_location) from ahinfotech;
++--------------+
+| emp_location |
++--------------+
+| banglr       |
+| Hyd          |
+| Chennai      |
+| Pune         |
+| Mp           |
+| tpt          |
+| goa          |
++--------------+
+7 rows in set (0.06 sec)
+
+mysql> select name from ahinfotech where name like "__i%";
++--------+
+| name   |
++--------+
+| Saif   |
+| Anil   |
+| Chitra |
++--------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql>  select name from ahinfotech where name like "%__a";
++--------+
+| name   |
++--------+
+| Chitra |
++--------+
+1 row in set (0.00 sec)
+
+mysql>

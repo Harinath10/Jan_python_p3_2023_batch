@@ -1,0 +1,12 @@
+
+Module  --> Module is a Single Python Code, That can be Imported.
+        --> Module is a file, Consisting of python code //
+             it can defines , Functions
+                              classes
+                              Variables
+             and can also include runnable code
+        --> a file containing python code , for example  test.py , is called a module
+             and its name would be text
+Package
+--------
+package is a Collection of Modules

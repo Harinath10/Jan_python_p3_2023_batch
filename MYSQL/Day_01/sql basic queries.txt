@@ -1,0 +1,76 @@
+search --> mysql commandline client
+          
+       |
+       
+enter password : root
+
+       |
+mysql>   show databases;
+
+
+Create a DataBase
+------------------------
+
+mysql>   create schema sep_5_python;
+
+mysql>   show databases;
+
+
+connect Database 
+-------------------------------
+
+connect sep_5_python;
+
+
+create a TABLE
+-----------------
+
+mysql> create table emp(name varchar(10) ,id integer,gender varchar(1));
+
+
+show tables
+------------------
+
+show tables;
+
+
+Show table data
+-----------------------
+
+select * from tablename
+
+
+insert values
+-------------------
+mysql> insert into emp(name,id,gender) values("Ramesh",10001,"M");
+
+
+update record or row
+-------------------------
+
+mysql> update emp set gender ="F" where id = 28090;
+
+mysql> update emp set id =1002  where name = "D Naveen";
+
+
+delete a row from table
+---------------------------------------
+mysql> delete from emp where id = 10005;
+
+
+=====================================================================================
+
+Where class
+
+where class using filter the Records (Rows)
+------------------------------------------
+-------------------------------------------------
+
+select * from emp where gender ="M";
+select * from emp where gender ="F";
+
+----------------------------------------------------
+ 
+select * from emp where name = "Ashok";
+
+select * from emp where id <5000;

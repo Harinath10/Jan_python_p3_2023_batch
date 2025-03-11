@@ -1,0 +1,7 @@
+create table MITS(students_name varchar(10),id integer,rollno integer,phonenumber double);
+
+SELECT * FROM college.mits;
+insert into mits(students_name,id,rollno,phonenumber)values("Pavan",104,4,9988553210),("Karthik",105,5,9553222210),
+("lakshmi",106,6,9989887610),
+("lokesh ",107,7,8989887610),
+("zahid",7,100,8989887610);
