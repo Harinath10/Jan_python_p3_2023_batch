@@ -1,6 +1,6 @@
 class Password:
     def set_pswd_datails(self):
-        self.pswd = "Hari123@"
+        self.pswd = "Hari123@@"
 
     def get_pswd_details(self):
         print(self.pswd)
@@ -18,7 +18,7 @@ print("*^"*25)
 
 class Password:
     def set_pswd_datails(self):
-        self.__pswd = "Hari123@"
+        self.__pswd = "Hari123@@"
 
     def get_pswd_details(self):
         print(self.__pswd)
