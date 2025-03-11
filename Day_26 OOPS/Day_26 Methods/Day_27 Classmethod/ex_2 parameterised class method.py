@@ -1,2 +1,0 @@
-# parameterised class method ... ?
-

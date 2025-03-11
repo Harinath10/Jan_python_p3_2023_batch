@@ -1,6 +1,0 @@
-f = open("data.txt", "w")
-f.write("Hello Mr.Manu \n")
-f.write("INTRODUCTION \n")
-f.write("MANOHAR FROM BANGLORE \n")
-f.write("WORKING AS A software Engineer")
-f.close()
